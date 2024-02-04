@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useGlobalContext } from "../globalContext";
 import Tasks from "../Items/Tasks";
 import AddTask from "../Items/AddTask";
@@ -38,9 +39,22 @@ const Home = () => {
   if (!users) {
     return (
       <div className="flex items-center justify-center min-h-96">
-        <div className="px-3 py-1 text-xl font-medium leading-none text-center text-blue-500 rounded-full">
-          Please Login or Signup.
-        </div>
+        <p className="text-lg text-blue-500 lg:text-xl">
+          Please
+          <Link
+            className="text-blue-500 hover:text-blue-700 hover:underline mx-1"
+            to="/login"
+          >
+            Login
+          </Link>
+          or
+          <Link
+            className="text-blue-500 hover:text-blue-700 hover:underline ml-1"
+            to="/signup"
+          >
+            SignUp
+          </Link>
+        </p>
       </div>
     );
   }
