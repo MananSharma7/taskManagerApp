@@ -1,14 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../globalContext.jsx";
 
 import "../styles/style.css";
 
 const Navbar = () => {
   const { users, userLogout } = useGlobalContext();
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     await userLogout();
+    navigate("/");
     window.location.reload();
   };
 
