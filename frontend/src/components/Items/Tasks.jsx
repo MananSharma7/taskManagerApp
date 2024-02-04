@@ -72,7 +72,7 @@ const Tasks = ({ tasks }) => {
                       type="checkbox"
                       onChange={(e) => handleCheck(e)}
                       className="ml-9 w-5 h-5 rounded text-blue-600 bg-gray-100 border-gray-300
-                   focus:ring-blue-500"
+                    focus:ring-blue-500"
                     />
                   ) : (
                     <input
@@ -80,7 +80,7 @@ const Tasks = ({ tasks }) => {
                       checked={task.completed === true}
                       readOnly
                       className="ml-9 w-5 h-5 rounded text-blue-600 bg-gray-100 border-gray-300
-                   focus:ring-blue-500"
+                    focus:ring-blue-500"
                     />
                   )}
                 </td>

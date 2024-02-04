@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../globalContext.jsx";
 
 const SignUp = () => {
@@ -6,6 +7,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const { userSignUp } = useGlobalContext();
 
@@ -17,8 +19,8 @@ const SignUp = () => {
     if (isValid) {
       try {
         const userData = { name, email, password };
-        console.log(userData);
         await userSignUp(userData);
+        navigate("/");
       } catch (error) {
         console.log(error);
       }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../globalContext.jsx";
 
 const Login = () => {
@@ -7,6 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const { userLogin } = useGlobalContext();
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ const Login = () => {
       try {
         const userData = { email, password };
         await userLogin(userData);
+        navigate("/");
       } catch (error) {
         console.log(error);
       }

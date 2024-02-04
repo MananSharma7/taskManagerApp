@@ -5,7 +5,7 @@ import AddTask from "../Items/AddTask";
 import { FaPlus } from "react-icons/fa6";
 
 const Home = () => {
-  const { tasks, getTasks } = useGlobalContext();
+  const { users, tasks, getTasks } = useGlobalContext();
   const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -35,6 +35,16 @@ const Home = () => {
     );
   }
 
+  if (!users) {
+    return (
+      <div className="flex items-center justify-center min-h-96">
+        <div className="px-3 py-1 text-xl font-medium leading-none text-center text-blue-500 rounded-full">
+          Please Login or Signup.
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto size-9/12 my-10">
       {isVisible && (
@@ -52,7 +62,7 @@ const Home = () => {
           </div>
         </button>
       )}
-      <Tasks tasks={tasks} />
+      {tasks && <Tasks tasks={tasks} />}
     </div>
   );
 };
