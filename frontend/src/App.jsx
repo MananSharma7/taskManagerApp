@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useGlobalContext } from "./components/globalContext.jsx";
-import Home from "./components/pages/home.jsx";
+import Home from "./components/pages/Home.jsx";
 import SignUp from "./components/pages/SignUp.jsx";
 import Login from "./components/pages/Login.jsx";
 import Profile from "./components/pages/Profile.jsx";
